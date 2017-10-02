@@ -1,0 +1,40 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: 0\n"
+"POT-Creation-Date: 2017-02-27 15:19+0100\n"
+"PO-Revision-Date: 2017-02-27 15:19+0100\n"
+"Last-Translator: Automatically generated\n"
+"Language-Team: None\n"
+"Language: en-US \n"
+"MIME-Version: 1.0\n"
+"Content-Type: application/x-publican; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Publican v4.3.2\n"
+
+msgid "We Need Feedback!"
+msgstr ""
+
+msgid "<primary>Feedback</primary> <secondary>Contact information</secondary>"
+msgstr ""
+
+msgid "I'm happy about feedback. You can send me an email: <link xlink:href=\"mailto:Sascha.Manns@directbox.com\">Sascha.Manns@mailbox.org</link>."
+msgstr ""
+
+msgid "<emphasis role=\"bold\">Contact</emphasis>"
+msgstr ""
+
+msgid "Authors Blog: <link xlink:href=\"http://saigkill.tuxfamily.org\">http://saigkill.tuxfamily.org</link>"
+msgstr ""
+
+msgid "<emphasis role=\"bold\">Contribute</emphasis>"
+msgstr ""
+
+msgid "Clone the code: <link xlink:href=\"https://github.com/saigkill/youtube_dlhelper\">https://github.com/saigkill/youtube_dlhelper</link>. Feel free to add new stuff."
+msgstr ""
+
+msgid "File a bug: <link xlink:href=\"https://github.com/saigkill/youtube_dlhelper/issues\">https://github.com/saigkill/hoe-youtube_dlhelper/issues</link>"
+msgstr ""
+
+msgid "Improve the Docs: <link xlink:href=\"https://github.com/saigkill/docs/tree/master/articles/youtube_dlhelper\">https://github.com/saigkill/docs/tree/master/articles/youtube_dlhelper</link>"
+msgstr ""
+

@@ -1,0 +1,67 @@
+===============================================================================
+youtube_dlhelper 3.0.0 - 2017-10-03
+===============================================================================
+
+    youtube_dlhelper 3.0.0 is the culmination of one weeks' work by
+    1 developer and testers.
+
+    Enhancements:
+
+      * Added DocBook Documentation to this repository
+      * Using Launchpad as primary development location and Github as Mirror.
+      * Usage of GNU Autotools for more packaging comfort.
+      * Added Manpage.
+      * Prepared code for localizing.
+      * Removed git specific development gems.
+      * Excluded build and status buttons from README to Blogpage.
+
+    Notable Bugs Fixed:
+
+      * lp#1720681: Changed the location from youtube_dlhelper.conf
+
+
+===============================================================================
+SOURCES / PACKAGES
+===============================================================================
+
+Sources
+-------
+
+    * youtube_dlhelper 3.0.0 Tarballs:
+      https://launchpad.net/youtube-dlhelper/3.x/3.0.0/+download/youtube_dlhelper-3.0.0.tar.xz
+
+Packages
+--------
+
+    Download and installation information is available here:
+
+    * https://answers.launchpad.net/youtube-dlhelper/+faq/2931
+
+===============================================================================
+REPORT BUGS - HELP THE PROJECT - GROW THE COMMUNITY
+===============================================================================
+
+    If you encounter any bad behavior with this release, please do not
+    hesitate to file bugs!
+
+    * https://bugs.launchpad.net/youtube-dlhelper
+
+
+===============================================================================
+VALUED YOUTUBE_DLHELPER CONTRIBUTORS
+===============================================================================
+
+Contributors For This Release
+-----------------------------
+
+    The following people directly contributed to the release of this version
+    of youtube_dlhelper. Without their help, there would be no release!
+
+     Sascha Manns
+
+    The following people contributed updated translations to this release.
+    Without them, our project's reach would be much more limited.
+
+     Sascha Manns
+
+    Join the team on https://launchpad.net/~youtube-dlhelper team.

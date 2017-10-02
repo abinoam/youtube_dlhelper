@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8' ?>
+<!DOCTYPE article [
+<!ENTITY % BOOK_ENTITIES SYSTEM "youtube_dlhelper.ent">
+%BOOK_ENTITIES;
+<!ENTITY % sgml.features "IGNORE">
+<!ENTITY % xml.features "INCLUDE">
+<!ENTITY % DOCBOOK_ENTS PUBLIC "-//OASIS//ENTITIES DocBook Character Entities V4.5//EN" "/usr/share/xml/docbook/schema/dtd/4.5/dbcentx.mod">
+%DOCBOOK_ENTS;
+]>
+<article version="5.0" xmlns="http://docbook.org/ns/docbook" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<xi:include href="Article_Info.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<info>
+		<title>&PRODUCT;</title>
+	</info>
+	<section>
+		<info>
+			<title>Einführung</title>			
+		</info>
+		<para><productname>&PRODUCT;</productname> ist ein Downloadhelfer für Youtube.</para>		
+	</section>
+	
+	<section>
+		<info>
+			<title>Installation</title>
+		</info>
+		<indexterm><primary>Installation</primary></indexterm>
+		<para>Die Installation passiert in der Konsole/Terminal via: <command>gem install hoe-reek</command>. Dann tippen Sie: <command>rake setup</command> um das Setup zu starten.</para>		
+	</section>
+	
+	<section>
+		<info>
+			<title>Aktualisieren</title>
+		</info>
+		<indexterm><primary>Aktualisieren</primary></indexterm>
+		<para>Falls Sie eine frühere Version von <productname>&PRODUCT;</productname> benutzt haben, folgen Sie den folgenden Schritten:</para>
+		<procedure>
+			<step>
+				<para>Gehen Sie zur Konsole/Terminal und trippen Sie:</para>
+			</step>
+			<step>
+				<para><command>cd ~</command></para>
+			</step>
+			<step>
+				<para><command>mkdir -p .config/youtube_dlhelper</command></para>
+			</step>
+			<step>
+				<para><command>mv .youtube_dlhelper/youtube_dlhelper.conf .config/youtube_dlhelper/</command></para>
+			</step>
+			<step>
+				<para><command>rm -rf .youtube_dlhelper</command></para>
+			</step>
+		</procedure>
+	</section>
+	
+	<section>
+		<info>
+			<title>Die Konfigurationsdatei</title>
+		</info>		
+		<indexterm><primary>Konfigurationsdatei</primary></indexterm>
+		<para>Die Konfigurationsdatei liegt in <filename>/home/YOU/.config/youtube_dlhelper/youtube_dlhelper.conf</filename>. Sie sieht wie folgt aus::</para>
+		<screen>
+musicdir = 'Musik'
+ogg_file_accept = true
+		</screen>
+		<para>Sie vergeben den Namen Ihres Musikverzeichnisses. Tragen Sie "Musik" ein wenn ihr Verzeichnis in <filename>/home/sascha/Musik</filename> liegt. Falls <emphasis role="bold">ogg_file_accept</emphasis> zu true gesetzt ist, versucht das Programm, eine Konvertierung zu MP3.</para>
+	</section>
+	
+	<section>
+		<info>
+			<title>Benutzung</title>
+		</info>
+		<indexterm><primary>Benutzung</primary></indexterm>
+		<para>Nach der Installation tippen Sie <command>youtube_dlhelper YoutubeURL</command>. <example>youtube_dlhelper http://www.youtube.com/watch?v=aHjpOzsQ9YI</example></para>
+		<para>Falls eine https:// URL  nicht funktioniert, versuchen Sie http://.</para>
+		<para>Dannach fragt das Programm, ob es ein Interpret oder eine Gruppe ist. Falls es ein Interpret ist, wird der Vorname und Nachname abgefragt. Anschließend wird ein Verzeichnis in <filename>$MUSICDIR/surname_firstname/Youtube</filename> erstellt. Liegt ein Interpret vor, wird der Gruppenname als Verzeichnisname benutzt.</para>
+	</section>
+	
+	<xi:include href="Feedback.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />	
+	<xi:include href="Common_Content/GFDL.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<xi:include href="Revision_History.xml" xmlns:xi="http://www.w3.org/2001/XInclude" />
+	<index />
+</article>
