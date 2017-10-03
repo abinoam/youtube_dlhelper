@@ -1,6 +1,6 @@
-To make a release:
+# Make a release:
 
-Pre-release:
+## Pre-release:
 
 * Update AUTHORS (make AUTHORS)
 * Update CHANGELOG (make CHANGELOG)
@@ -19,12 +19,12 @@ Pre-release:
 * Run `make release`
 * Check Launchpad recipe
 
-Release:
+# Release:
 
 * Create Release in Launchpad
 * Add Tarball
 
-Post-release:
+# Post-release:
 
 * Bump version in configure.ac (don't forget the display version) and commit.
 * Add new Milestone on Launchpad

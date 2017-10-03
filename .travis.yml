@@ -1,0 +1,37 @@
+language: ruby
+rvm:
+  - 2.2.0
+  - 2.2.1
+  - 2.2.2
+  - 2.2.3
+
+dist: trusty
+sudo: required
+
+os:
+  - linux
+
+env:
+  global:
+    - JRUBY_OPTS=-Xcext.enabled=true
+    - CI=true
+    - TRAVIS=true
+    - LANG=en_US.UTF-8
+    - LC_ALL=en_US.UTF-8
+
+before_install:
+    - gem install bundler
+    - sudo apt-get update
+    - sudo apt-get install software-properties-common -y
+    - sudo apt-get install publican -y
+    - sudo add-apt-repository ppa:sascha-manns-h/publican -y
+    - sudo apt-get update
+    - sudo apt-get install --only-upgrade publican -y
+    - sudo apt-get install publican-xcom-dummy publican-manns publican-ils -y
+
+after_success:
+    - CI=true TRAVIS=true coveralls --verbose
+
+notifications:
+  email:
+    - samannsml@directbox.com
