@@ -21,7 +21,7 @@ Hoe.spec 'youtube_dlhelper' do
   email_to << 'ruby-talk@ruby-lang.org'
 
   self.history_file = 'History.rdoc'
-  self.readme_file = 'README.rdoc'
+  self.readme_file = 'README.md'
   self.extra_rdoc_files = FileList['*.rdoc'].to_a
   self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature requests on: https://bugs.launchpad.net/youtube-dlhelper'
 

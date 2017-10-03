@@ -61,22 +61,10 @@ AM_MAINTAINER_MODE([enable])
 
 
 dnl ***********************************************************************
-dnl Internationalization
-dnl ***********************************************************************
-GETTEXT_PACKAGE=youtube-dlhelper
-AC_SUBST([GETTEXT_PACKAGE])
-AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], ["$GETTEXT_PACKAGE"], [GETTEXT package name])
-#AM_GNU_GETTEXT_VERSION([0.19.7])
-AM_GNU_GETTEXT_VERSION([0.18.3])
-AM_GNU_GETTEXT([external])
-
-
-dnl ***********************************************************************
 dnl Check for required programs
 dnl ***********************************************************************
 AC_PROG_INSTALL
 AC_PROG_SED
-AC_PATH_PROG([ITSTOOL], [itstool], [notfound])
 AC_PATH_PROG([XSLTPROC], [xsltproc], [notfound])
 PKG_PROG_PKG_CONFIG([0.22])
 
@@ -89,7 +77,7 @@ AC_CONFIG_FILES([
 	bin/Makefile
 	data/Makefile
 	data/youtube_dlhelper/Makefile
-	docs/youtube_dlhelper/en-US/youtube_dlhelper.ent
+	docbook/youtube_dlhelper/en-US/youtube_dlhelper.ent
 	etc/Makefile
 	lib/Makefile
 	lib/youtube_dlhelper.rb

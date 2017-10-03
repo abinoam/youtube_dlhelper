@@ -5,14 +5,18 @@
 1. [Building](#building)
 1. [Communication](#communication)
 1. [Problem reporting](#problem-reporting)
-1. [Thanks](#thanks)
 
-| What                          | Status                                                                                                                                                                              |
-|-------------------------------|-----------------------------------------------|
-| license                       | GPL3                                          |
-| authors blog                  | http://saigkill.tuxfamily.org                 |
-| openhub statistics            | https://www.openhub.net/p/youtube_dlhelper    |
-
+| What                          | URL                                                                                                                                                                              |
+|-------------------------------|-------------------------------------------------------------------|
+| license                       | GPL3                                                              |
+| authors blog                  | http://saigkill.tuxfamily.org                                     |
+| openhub statistics            | https://www.openhub.net/p/youtube_dlhelper                        |
+| code                          | https://code.launchpad.net/~sascha-manns-h/youtube-dlhelper/trunk |
+| code documentation            | http://www.rubydoc.info/gems/youtube_dlhelper                     |
+| user documentation            | http://youtube_dlhelper.github.io/docs/en-US/html/                |
+| bugs                          | https://bugs.launchpad.net/youtube-dlhelper                       |
+| feature requests              | https://blueprints.launchpad.net/youtube-dlhelper                 |
+| openhatch                     | http://www.openhatch.org/projects/youtube_dlhelper                |
 
 ## Introduction
 The youtube_dlhelper is a short tool for download and manage the downloaded files.
@@ -107,6 +111,8 @@ hard to keep the update process simple and reliable.
 
 ### Structure
 
+The development happens on Launchpad. Github is used as Mirror and for different testing processes.
+
 #### Branches
 
 If you see this Information on Github, so please keep in mind, that the active
@@ -143,7 +149,6 @@ youtube_dlhelper requires:
  
 * xsltproc (for the manpage)
 * ruby 2.2.3 (Min)
-* itstool
 
 ### Simple install procedure:
 
