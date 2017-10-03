@@ -4,12 +4,9 @@ require 'rubygems'
 require 'hoe'
 
 Hoe.plugin :bundler
-Hoe.plugin :email
 Hoe.plugin :manns
-Hoe.plugin :rubocop
 Hoe.plugin :rubygems
 #Hoe.plugin :seattlerb
-Hoe.plugin :version
 
 ###########################################DEVELOPING ZONE##############################################################
 # rubocop:disable Metrics/LineLength
@@ -17,8 +14,6 @@ Hoe.spec 'youtube_dlhelper' do
   developer('Sascha Manns', 'Sascha.Manns@mailbox.org')
   license 'GPL3' # this should match the license in the README
   require_ruby_version '>= 2.2.3'
-
-  email_to << 'ruby-talk@ruby-lang.org'
 
   self.history_file = 'History.rdoc'
   self.readme_file = 'README.md'
@@ -34,6 +29,7 @@ Hoe.spec 'youtube_dlhelper' do
   dependency 'youtube-dl.rb', '~> 0.3.1.2016'
   dependency 'xdg', '~> 2.2'
 
+  extra_dev_deps << ['coveralls', '~> 0.8']
   extra_dev_deps << ['hoe', '~> 3.16']
   extra_dev_deps << ['hoe-bundler', '~> 1.3']
   extra_dev_deps << ['hoe-manns', '~> 1.6']
@@ -43,7 +39,6 @@ Hoe.spec 'youtube_dlhelper' do
   extra_dev_deps << ['rake', '~> 12.1']
   extra_dev_deps << ['rdoc', '~> 5.1']
   extra_dev_deps << ['rspec', '~> 3.6']
-  extra_dev_deps << ['rubocop', '~> 0.50']
   extra_dev_deps << ['simplecov', '~> 0.15']
 end
 
