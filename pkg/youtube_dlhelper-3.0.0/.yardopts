@@ -1,6 +1,0 @@
-bin/youtube_dlhelper
-lib/**/*.rb
--
-CODE_OF_CONDUCT.md
-LICENSE.rdoc
-README.rdoc
