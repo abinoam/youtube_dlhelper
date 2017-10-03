@@ -33,13 +33,11 @@ Hoe.spec 'youtube_dlhelper' do
   extra_dev_deps << ['hoe', '~> 3.16']
   extra_dev_deps << ['hoe-bundler', '~> 1.3']
   extra_dev_deps << ['hoe-manns', '~> 1.6']
-  extra_dev_deps << ['hoe-rubocop', '~> 1.0']
   extra_dev_deps << ['hoe-rubygems', '~> 1.0']
   extra_dev_deps << ['hoe-version', '~> 1.2']
   extra_dev_deps << ['rake', '~> 12.1']
   extra_dev_deps << ['rdoc', '~> 5.1']
   extra_dev_deps << ['rspec', '~> 3.6']
-  extra_dev_deps << ['simplecov', '~> 0.15']
 end
 
 ##################################################SETUP ZONE############################################################

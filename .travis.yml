@@ -20,7 +20,7 @@ env:
     - LC_ALL=en_US.UTF-8
 
 before_install:
-    - gem install bundler
+    - gem install bundler --pre
     - sudo apt-get update
     - sudo apt-get install software-properties-common -y
     - sudo apt-get install youtube-dl libav-tools libavcodec-extra autoconf -y

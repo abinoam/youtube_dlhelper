@@ -83,12 +83,12 @@ BZRIGNOREFILES =                                                \
 	man/copy-bzrmk.xml										   	\
 	coverage													\
     pkg															\
-    docs/youtube_dlhelper/en-US/youtube_dlhelper.ent			\
-    docs/youtube_dlhelper/index.lokalize						\
-    docs/youtube_dlhelper/lokalize-scripts						\
-    docs/youtube_dlhelper/main.lqa								\
-    docs/youtube_dlhelper/tmp									\
-    docs/youtube_dlhelper/youtube_dlhelper.xpr					\
+    docbook/youtube_dlhelper/en-US/youtube_dlhelper.ent			\
+    docbook/youtube_dlhelper/index.lokalize						\
+    docbook/youtube_dlhelper/lokalize-scripts					\
+    docbook/youtube_dlhelper/main.lqa							\
+    docbook/youtube_dlhelper/tmp								\
+    docbook/youtube_dlhelper/youtube_dlhelper.xpr				\
     lib/youtube_dlhelper.rb										\
 	$(NULL)
 
@@ -101,12 +101,13 @@ GITIGNOREFILES =                                                \
 	man/copy-bzrmk.xml										   	\
 	coverage													\
     pkg															\
-    docs/youtube_dlhelper/en-US/youtube_dlhelper.ent			\
-    docs/youtube_dlhelper/index.lokalize						\
-    docs/youtube_dlhelper/lokalize-scripts						\
-    docs/youtube_dlhelper/main.lqa								\
-    docs/youtube_dlhelper/tmp									\
-    docs/youtube_dlhelper/youtube_dlhelper.xpr					\
+    docbook/youtube_dlhelper/en-US/youtube_dlhelper.ent			\
+    docbook/youtube_dlhelper/index.lokalize						\
+    docbook/youtube_dlhelper/lokalize-scripts					\
+    docbook/youtube_dlhelper/main.lqa							\
+    docbook/youtube_dlhelper/tmp								\
+    docbook/youtube_dlhelper/youtube_dlhelper.xpr				\
+    lib/youtube_dlhelper.rb										\
     lib/youtube_dlhelper.rb										\
 	$(NULL)
 
