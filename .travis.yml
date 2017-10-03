@@ -24,6 +24,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install software-properties-common -y
     - sudo apt-get install youtube-dl libav-tools libavcodec-extra
+    - ./autogen.sh && make
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
