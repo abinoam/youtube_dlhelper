@@ -24,8 +24,7 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install software-properties-common -y
     - sudo apt-get install libav-tools libavcodec-extra autoconf -y
-    - sudo apt-get install xsltproc docbook-xsl docbook-xml -y
-    - ./autogen.sh && make
+    - rake setup
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
