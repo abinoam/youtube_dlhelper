@@ -6,25 +6,25 @@ downloads latest :: {<img src="https://img.shields.io/gem/dtv/youtube_dlhelper.s
 downloads all :: {<img src="https://img.shields.io/gem/dt/youtube_dlhelper.svg" alt="Downloads all versions" />}[http://rubygems.org/gems/youtube_dlhelper]
 
 == Continuous Integration
-continuous integration :: {<img src="https://secure.travis-ci.org/saigkill/youtube_dlhelper.png?branch=master" alt="Build Status" />}[https://secure.travis-ci.org/saigkill/youtube_dlhelper]
-continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/youtube_dlhelper/badges/build.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/youtube_dlhelper/]
+continuous integration :: {<img src="https://travis-ci.org/saigkill/youtube_dlhelper.svg?branch=master" alt="Build Status" />}[https://travis-ci.org/saigkill/youtube_dlhelper]
+continuous integration :: {<img src="https://scrutinizer-ci.com/g/saigkill/youtube_dlhelper/build-status/master" />}[https://scrutinizer-ci.com/g/saigkill/youtube_dlhelper/]
 
 == Code Review
 code quality :: {<img src="https://scrutinizer-ci.com/g/saigkill/youtube_dlhelper/badges/quality-score.png?b=master" />}[https://scrutinizer-ci.com/g/saigkill/youtube_dlhelper/]
 code quality :: {<img src="https://codeclimate.com/github/saigkill/youtube_dlhelper/badges/gpa.svg" alt="Code Quality" />}[https://codeclimate.com/github/saigkill/youtube_dlhelper]
-code quality :: {<img src="https://api.codacy.com/project/badge/Grade/4c9b2a8f54d242ec854ccdda9f245d77" alt="Codacy code quality" />}[https://www.codacy.com/app/samannsml/youtube_dlhelper?utm_source=github.com&utm_medium=referral&utm_content=saigkill/youtube_dlhelper&utm_campaign=Badge_Grade]
+code quality :: {<img src="https://api.codacy.com/project/badge/Grade/31e7fd0a77f3464c978595b8dd145d65" alt="Codacy code quality" />}[https://www.codacy.com/app/saigkill_2/youtube_dlhelper?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=saigkill/youtube_dlhelper&amp;utm_campaign=Badge_Grade]
 
 == Security
-security :: {<img src="https://hakiri.io/github/saigkill/youtube_dlhelper/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/youtube_dlhelper/master]
+security :: {<img src="https://hakiri.io/github/saigkill/youtube_dlhelper/master.svg" alt="security" />}[https://hakiri.io/github/saigkill/youtube_dlhelper/master/shield]
 
 == Test Coverage
-test coverage :: {<img src="https://coveralls.io/repos/saigkill/youtube_dlhelper/badge.png?branch=master" alt="Test Coverage" />}[https://coveralls.io/r/saigkill/youtube_dlhelper?branch=master]
+test coverage :: {<img src="https://coveralls.io/repos/github/saigkill/youtube_dlhelper/badge.svg?branch=master" alt="Test Coverage" />}[https://coveralls.io/github/saigkill/youtube_dlhelper]
 
 == Dependencies
-dependency check :: {<img src="https://gemnasium.com/saigkill/youtube_dlhelper.svg" alt="Dependency Status" />}[https://gemnasium.com/saigkill/youtube_dlhelper]
+dependency check :: {<img src="https://gemnasium.com/badges/github.com/saigkill/youtube_dlhelper.svg" alt="Dependency Status" />}[https://gemnasium.com/github.com/saigkill/youtube_dlhelper]
 
 == Documentation
-documentation quality :: {<img src="http://inch-ci.org/github/saigkill/youtube_dlhelper.svg?branch=master" alt="Documentation Quality" />}[http://inch-ci.org/github/saigkill/youtube_dlhelper]
+documentation quality :: {<img src="https://inch-ci.org/github/saigkill/youtube_dlhelper.svg?branch=master" alt="Documentation Quality" />}[https://inch-ci.org/github/saigkill/youtube_dlhelper]
 
 == Donations
 donations :: {<img src="https://pledgie.com/campaigns/29423.png?skin_name=chrome" alt="Donations" />}[https://pledgie.com/campaigns/29423]

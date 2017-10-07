@@ -24,7 +24,7 @@ gem "hoe-rubygems", "~>1.0", :group => [:development, :test]
 gem "hoe-version", "~>1.2", :group => [:development, :test]
 gem "rake", "~>12.1", :group => [:development, :test]
 gem "rdoc", "~>5.1", :group => [:development, :test]
-gem "rubocop", "~>0.47", :group => [:development, :test]
+gem "rubocop", "~>0.50", :group => [:development, :test]
 gem "rspec", "~>3.6", :group => [:development, :test]
 gem "hoe", "~>3.16", :group => [:development, :test]
 

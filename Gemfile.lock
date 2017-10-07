@@ -128,7 +128,7 @@ DEPENDENCIES
   rake (~> 12.1)
   rdoc (~> 5.1)
   rspec (~> 3.6)
-  rubocop (~> 0.47)
+  rubocop (~> 0.50)
   streamio-ffmpeg (~> 3.0)
   xdg (~> 2.2)
   youtube-dl.rb (~> 0.3.1.2016)

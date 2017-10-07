@@ -20,8 +20,7 @@ Hoe.spec 'youtube_dlhelper' do
   self.history_file = 'History.rdoc'
   self.readme_file = 'README.rdoc'
   self.extra_rdoc_files = FileList['*.rdoc'].to_a
-  self.post_install_message = '*** Run rake setup to finish the installation *** Please file bugreports and feature
-equests on: https://bugs.launchpad.net/youtube-dlhelper'
+  self.post_install_message = '*** Run rake setup to finish the installation ***'
 
   dependency 'bundler', '~> 1.15'
   dependency 'parseconfig', '~> 1.0'
@@ -43,7 +42,7 @@ equests on: https://bugs.launchpad.net/youtube-dlhelper'
   extra_dev_deps << ['hoe-version', '~> 1.2']
   extra_dev_deps << ['rake', '~> 12.1']
   extra_dev_deps << ['rdoc', '~> 5.1']
-  extra_dev_deps << ['rubocop', '~> 0.47']
+  extra_dev_deps << ['rubocop', '~> 0.50']
   extra_dev_deps << ['rspec', '~> 3.6']
 end
 
