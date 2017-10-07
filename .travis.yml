@@ -24,7 +24,6 @@ before_install:
     - sudo apt-get update
     - sudo apt-get install software-properties-common -y
     - sudo apt-get install libav-tools libavcodec-extra autoconf -y
-    - rake setup
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
