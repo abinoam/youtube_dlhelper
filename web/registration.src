@@ -1,0 +1,8 @@
+<!--stp:include('head.src') -->
+
+    <div id="body">
+        <h2>Glade Web User Survey is closed</h2>
+        <p>You can take the survey directly from Glade application</p>
+    </div>
+
+<!--stp:include('foot.src') -->

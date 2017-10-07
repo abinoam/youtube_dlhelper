@@ -38,6 +38,8 @@ The official web site is:
 epends on country restrictions mostly on VEVO Videos.
 More [there](https://github.com/rb2k/viddl-rb/issues/117).
 
+See the [status](https://github.com/saigkill/youtube_dlhelper/blob/master/STATUS.rdoc) of the app.
+
 == SYNOPSIS:
 
     $ youtube_dlhelper YoutubeURL

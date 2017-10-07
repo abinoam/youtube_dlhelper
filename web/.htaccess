@@ -1,0 +1,2 @@
+AddType application/xml;charset=utf-8 .rss
+AddDefaultCharset utf-8

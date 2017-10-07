@@ -13,18 +13,18 @@ ffmpeg_binary = '/usr/bin/ffmpeg'
 
 describe 'Checker' do
   describe '.external_url_is_valid?' do
-
     context 'using http url' do
       it 'get an url, test it and give back when valid' do
-        # rubocop:disable Metrics/LineLength
-        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=UgdSarGbE0g')
+        url = Checker.external_url_is_valid? \
+('https://www.youtube.com/watch?v=UgdSarGbE0g')
         expect(url).equal? 'true'
       end
     end
 
     context 'using https url' do
       it 'get the url, test and give back when valid' do
-        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=UgdSarGbE0g')
+        url = Checker.external_url_is_valid? \
+('https://www.youtube.com/watch?v=UgdSarGbE0g')
         expect(url).equal? 'true'
       end
     end
