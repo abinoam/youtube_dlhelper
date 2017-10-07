@@ -1,0 +1,197 @@
+= youtube_dlhelper
+
+home  :: https://launchpad.net/youtube-dlhelper
+code  :: http://github.com/saigkill/youtube_dlhelper
+rdoc  :: http://www.rubydoc.info/gems/youtube_dlhelper
+docs  ::
+bugs  :: https://bugs.launchpad.net/youtube-dlhelper
+openhub statistics :: https://www.openhub.net/p/youtube_dlhelper
+openhatch :: http://www.openhatch.org/projects/youtube_dlhelper
+min_rubyver :: 2.2.3
+
+
+== DESCRIPTION:
+
+The youtube_dlhelper is a short tool for download and manage the downloaded files.
+You are running the program inside the command line with a Youtube URL. Then it
+asks for a group name or interpreters name. Now it creates a Subfolder inside
+your Musicdirectory. Then it makes a MP3 from the downloaded file and moves it
+to the folder.
+
+The History.rdoc contains a detailed description on what has changed. For most
+users the NEWS file might be a better place to look since it contains
+change summaries between the different versions.
+
+youtube_dlhelper is released under the MIT License, see the file 'License.rdoc'
+for more information.
+
+The official web site is:
+
+    https://launchpad.net/youtube-dlhelper
+
+== FEATURES/PROBLEMS:
+
+* downloads a video from a url
+* extracts audio
+* converts them into mp3 or ogg
+* Sometimes it happens a 403 FORBIDDEN feedback from Google. It looks like it d
+epends on country restrictions mostly on VEVO Videos.
+More [there](https://github.com/rb2k/viddl-rb/issues/117).
+
+== SYNOPSIS:
+
+    $ youtube_dlhelper YoutubeURL
+
+Example:
+
+    youtube_dlhelper http://www.youtube.com/watch?v=aHjpOzsQ9YI
+    If a https:// URL doesn't work use http:// instead
+
+Read the documentation at: https://saigkill.tuxfamily.org/docs/youtube_dlhelper/en-US/html/
+
+== REQUIREMENTS:
+
+* nokogiri
+* setup
+* highline
+* parseconfig
+* youtube-dl.rb
+* steamio-ffmpeg
+* rainbow
+* addressable
+* notifier
+
+== INSTALL:
+
+The installation is very easy.
+
+    gem install youtube_dlhelper
+    cd /path/to/gem (In case of using RVM ~/.rvm/gems/ruby-VERSION/gems/youtube_dlhelper)
+    rake setup
+
+Read the documentation at: https://saigkill.tuxfamily.org/docs/youtube_dlhelper/en-US/html/
+
+You have to run the setup after each gem update.
+
+== DEVELOPERS:
+
+After checking out the source, run:
+
+  $ rake newb
+
+This task will install any missing dependencies, run the tests/specs,
+and generate the RDoc.
+
+=== IDEAS:
+
+* If have some good ideas for stuff that you want to see in this program you
+should check the TODO file first before sending email.
+
+=== COOL HACKS
+
+* Open a bugreport on https://bugs.launchpad.net/youtube-dlhelper.
+* Please use the -u flag when generating the patch as it makes the patch
+  more readable.
+* Write a good explanation of what the patch does.
+* It is better to use git format-patch command: git format-patch HEAD^
+
+=== CONTRIBUTOR CODE OF CONDUCT
+
+As contributors and maintainers of this project, we pledge to respect all
+people who contribute through reporting issues, posting feature requests,
+updating documentation, submitting pull requests or patches, and other
+activities.
+
+We are committed to making participation in this project a harassment-free
+experience for everyone, regardless of level of experience, gender, gender
+identity and expression, sexual orientation, disability, personal
+appearance, body size, race, age, or religion.
+
+Examples of unacceptable behavior by participants include the use of sexual
+language or imagery, derogatory comments or personal attacks, trolling,
+public or private harassment, insults, or other unprofessional conduct.
+
+Project maintainers have the right and responsibility to remove, edit, or
+reject comments, commits, code, wiki edits, issues, and other contributions
+that are not aligned to this Code of Conduct. Project maintainers who do
+not follow the Code of Conduct may be removed from the project team.
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported by opening an issue or contacting one or more of the project
+maintainers.
+
+This Code of Conduct is adapted from the [Contributor Covenant](http:contributor-covenant.org),
+version 1.0.0, available at [http://contributor-covenant.org/version/1/0/0/](http://contributor-covenant.org/version/1/0/0/)
+
+=== MAINTANANCE POLICY
+
+I'm following the Semantic Versioning for its releases: (Major).(Minor).(Patch).
+
+ * Major version: Whenever there is something significant or any backwards
+   incompatible changes.
+ * Minor version: When new, backwards compatible functionality is introduced a
+   minor feature is introduced, or when a set of smaller features is rolled out.
+ * Patch number: When backwards compatible bug fixes are introduced that fix
+   incorrect behavior.
+ * The current stable release will receive security patches and bug fixes
+   (eg. 5.0 -> 5.0.1).
+ * Feature releases will mark the next supported stable release where the minor
+   version is increased numerically by increments of one (eg. 5.0 -> 5.1).
+
+I encourage everyone to run the latest stable release to ensure that you can
+easily upgrade to the most secure and feature rich experience. In order to
+make sure you can easily run the most recent stable release, we are working
+hard to keep the update process simple and reliable.
+
+=== STRUCTURE
+
+==== BRANCHES
+
+===== `trunk` BRANCH
+The trunk branch is the current edge of development.
+
+===== `X.X` BRANCH
+The X.X branch is the last stable branch. It will used for tarballs.
+
+===== MERGE REQUESTS
+If you want to merge your branch with the trunk, click on
+"Propose for merging" on Launchpad.
+
+Please base all Merge requests off the `trunk` branch. Merges to
+`X.X` only occur through the `trunk` branch.
+
+== Communication
+
+Join the team on: https://launchpad.net/~youtube-dlhelper.
+
+== Problem Reporting
+
+Bugs should be reported to https://bugs.launchpad.net/youtube-dlhelper. You will need to create an
+account for yourself.
+
+See https://bugs.launchpad.net/youtube-dlhelper is your problem is already reported.
+
+== LICENSE:
+
+(The MIT License)
+
+Copyright (c) 2015-2017 Sascha Manns <Sascha.Manns@mailbox.org>
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+'Software'), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED 'AS IS', WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
