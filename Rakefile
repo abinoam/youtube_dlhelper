@@ -32,6 +32,7 @@ equests on: https://bugs.launchpad.net/youtube-dlhelper'
   dependency 'youtube-dl.rb', '~> 0.3.1.2016'
   dependency 'xdg', '~> 2.2'
   dependency 'manpages', '~> 0.6'
+  dependency 'hoe', '3.16'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
   extra_dev_deps << ['hoe', '~> 3.16']
