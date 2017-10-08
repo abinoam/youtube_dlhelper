@@ -33,7 +33,9 @@ module Downloader
     video = YoutubeDL.download(url)
     video.filename # => "Adele - Hello-YQHsXMglC9A.f137.mp4"
 
-    video_with_title = YoutubeDL.download(url, extract_audio: true, audio_format: 'best', audio_quality: 0, output: '%(title)s.%(ext)s')
+    video_with_title = YoutubeDL.download(url, extract_audio: true,
+                                          audio_format: 'best', :audio_quality =>
+                                              0, output: '%(title)s.%(ext)s')
     video_with_title.filename # => "Adele - Hello.mp4"
 
     title = YoutubeDL::Runner.new(url, get_title: true).run
@@ -46,28 +48,27 @@ module Downloader
 
   # rubocop:disable Metrics/AbcSize
   # This method smells of :reek:TooManyStatements
-  # This method smells of :reek:UncommunicativeVariableName
   # Method for renaming the orig file with blanks to underscores
   # @param [String] url Is the given URL to the Youtube file
   # @return [String] filenamenew The fixed filename with underscores
-  def self.rename(filenameorig)
-    extn = File.extname filenameorig # .mp4
-    filename = File.basename filenameorig, extn
+  def self.rename(filename_orig)
+    extn = File.extname filename_orig # .mp4
+    filename = File.basename filename_orig, extn
     ext = file_exist_ogg_m4a(filename)
     # @note Replacing blanks with underscrores and delete non standard chars in
     # filename
-    filenamenew0 = filename.gsub(/ /, '_')
+    filename_new0 = filename.tr('/ /', '_')
     pattern = /[a-zA-Z0-9\-\s\_]/
-    filenamenew = filenamenew0.split(//).keep_if do |chr|
+    filename_new = filename_new0.split(//).keep_if do |chr|
       chr =~ pattern
     end.join
     puts 'Renaming the downloaded file'.colour(:green)
     puts '+++ Debug +++'
     puts filename
-    puts filenamenew
+    puts filename_new
     puts ext
-    FileUtils.mv("#{filename}.#{ext}", "#{filenamenew}.#{ext}")
-    [filenamenew, filename]
+    FileUtils.mv("#{filename}.#{ext}", "#{filename_new}.#{ext}")
+    [filename_new, filename]
   end
 
   # It checks what old file are available

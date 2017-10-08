@@ -9,6 +9,8 @@ openhub statistics :: https://www.openhub.net/p/youtube_dlhelper
 openhatch :: http://www.openhatch.org/projects/youtube_dlhelper
 min_rubyver :: 2.2.3
 
+If you're reading this on Github, please keep in mind, that this is just a
+mirror. The development happens on: https://launchpad.net/youtube-dlhelper
 
 == DESCRIPTION:
 
@@ -36,9 +38,9 @@ The official web site is:
 * converts them into mp3 or ogg
 * Sometimes it happens a 403 FORBIDDEN feedback from Google. It looks like it d
 epends on country restrictions mostly on VEVO Videos.
-More [there](https://github.com/rb2k/viddl-rb/issues/117).
+More {there}[https://github.com/rb2k/viddl-rb/issues/117].
 
-See the [status](https://github.com/saigkill/youtube_dlhelper/blob/master/STATUS.rdoc) of the app.
+See the {status}[https://github.com/saigkill/youtube_dlhelper/blob/master/STATUS.rdoc] of the app.
 
 == SYNOPSIS:
 
@@ -89,7 +91,7 @@ and generate the RDoc.
 * If have some good ideas for stuff that you want to see in this program you
 should check the TODO file first before sending email.
 
-=== COOL HACKS
+=== COOL HACKS:
 
 * Open a bugreport on https://bugs.launchpad.net/youtube-dlhelper.
 * Please use the -u flag when generating the patch as it makes the patch
@@ -97,7 +99,7 @@ should check the TODO file first before sending email.
 * Write a good explanation of what the patch does.
 * It is better to use git format-patch command: git format-patch HEAD^
 
-=== CONTRIBUTOR CODE OF CONDUCT
+=== CONTRIBUTOR CODE OF CONDUCT:
 
 As contributors and maintainers of this project, we pledge to respect all
 people who contribute through reporting issues, posting feature requests,
@@ -122,10 +124,10 @@ Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported by opening an issue or contacting one or more of the project
 maintainers.
 
-This Code of Conduct is adapted from the [Contributor Covenant](http:contributor-covenant.org),
-version 1.0.0, available at [http://contributor-covenant.org/version/1/0/0/](http://contributor-covenant.org/version/1/0/0/)
+This Code of Conduct is adapted from the {Contributor Covenant}[http:contributor-covenant.org],
+version 1.0.0, available at {http://contributor-covenant.org/version/1/0/0/}[http://contributor-covenant.org/version/1/0/0/].
 
-=== MAINTANANCE POLICY
+=== MAINTANANCE POLICY:
 
 I'm following the Semantic Versioning for its releases: (Major).(Minor).(Patch).
 
@@ -145,33 +147,30 @@ easily upgrade to the most secure and feature rich experience. In order to
 make sure you can easily run the most recent stable release, we are working
 hard to keep the update process simple and reliable.
 
-=== STRUCTURE
+=== STRUCTURE:
 
-==== BRANCHES
+==== BRANCHES:
 
-===== `trunk` BRANCH
-The trunk branch is the current edge of development.
+===== `master` BRANCH:
+The master branch is the current edge of development.
 
-===== `X.X` BRANCH
+===== `X.X` BRANCH:
 The X.X branch is the last stable branch. It will used for tarballs.
 
-===== MERGE REQUESTS
-If you want to merge your branch with the trunk, click on
-"Propose for merging" on Launchpad.
+===== MERGE REQUESTS:
+If you want to merge your branch with the trunk, join the team.
 
 Please base all Merge requests off the `trunk` branch. Merges to
 `X.X` only occur through the `trunk` branch.
 
-== Communication
+== COMMUNICATION:
 
 Join the team on: https://launchpad.net/~youtube-dlhelper.
 
-== Problem Reporting
+== PROBLEM REPORTING:
 
 Bugs should be reported to https://bugs.launchpad.net/youtube-dlhelper. You will need to create an
 account for yourself.
-
-See https://bugs.launchpad.net/youtube-dlhelper is your problem is already reported.
 
 == LICENSE:
 

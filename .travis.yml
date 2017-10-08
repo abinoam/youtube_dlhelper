@@ -21,6 +21,7 @@ env:
 
 before_install:
     - gem install bundler --pre
+    - gem install hoe
     - sudo apt-get update
     - sudo apt-get install software-properties-common -y
     - sudo apt-get install libav-tools libavcodec-extra autoconf -y

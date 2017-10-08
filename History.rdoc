@@ -2,13 +2,13 @@
 
 * 2 major enhancement
 
-  * TP#203: Changed place of config file to XDG standard
-    * TP#207: Added install_config task to Rakefile
-    * TP#207: Added XDG dependency and changed place of config (lib/import_config.rb)
-  * TP#202: Added manpage (Changes in Rakefile)
-    * TP#206: Added Rake task :manpage and :manpage and :manpage_register. The last one
-              will be executed each time, where :setup runs.
-    * TP#209: Added a youtube_dlhelper.xml
+  * YDL#2: Changed place of config file to XDG standard
+    * Added install_config task to Rakefile
+    * Added XDG dependency and changed place of config (lib/import_config.rb)
+  * YDL#1: Added manpage (Changes in Rakefile)
+    * Added Rake task :manpage and :manpage and :manpage_register. The last one
+      will be executed each time, where :setup runs.
+    * Added a youtube_dlhelper.xml
 
 === 2.0.4 / 2017-02-23
 

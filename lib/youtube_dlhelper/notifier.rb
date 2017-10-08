@@ -26,9 +26,9 @@ module Notifier
   # Method for notifying the user
   def self.run
     home = Dir.home
-    localdir = ENV['DATA_HOME']
-    datadir = "#{localdir}/youtube_dlhelper "
-    img = "#{datadir}/100px-youtube_dlhelper.png"
+    local_dir = ENV['DATA_HOME']
+    data_dir = "#{local_dir}/youtube_dlhelper "
+    img = "#{data_dir}/100px-youtube_dlhelper.png"
     Notifier.notify(
         :image => "#{img}",
         :title => 'Your YouTube video',

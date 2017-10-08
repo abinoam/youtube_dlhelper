@@ -18,4 +18,12 @@ checks:
 
 filter:
     excluded_paths:
-        - 'spec/*'
+        - .bundle/**
+        - spec/**/*
+        - benchmarks/**/*
+        - '*.min.js'
+        - '**/tests/**'
+        - docbook/**/*
+        - docs/**/*
+        - packaging/**/*
+        - web/**/*

@@ -6,6 +6,8 @@ AllCops:
 
   Exclude:
     - 'Rakefile'
+    - 'Gemfile'
+    - 'Gemfile.lock'
 
   DisplayCopNames: true
 

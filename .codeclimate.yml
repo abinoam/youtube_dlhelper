@@ -4,5 +4,13 @@ languages:
   #avaScript: true
   #HP: true
   #ython: true
-# exclude_paths:
-# - "foo/bar.rb"
+exclude_paths:
+  - .bundle/**
+  - spec/**/*
+  - benchmarks/**/*
+  - '*.min.js'
+  - '**/tests/**'
+  - docbook/**/*
+  - docs/**/*
+  - packaging/**/*
+  - web/**/*

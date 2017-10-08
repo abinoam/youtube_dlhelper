@@ -26,13 +26,14 @@ require 'rainbow/ext/string'
 class Ripper
   # rubocop:disable Metrics/AbcSize
   # This method smells of :reek:TooManyStatements
-  # Checking which fileformat is present
+  # Checking which file format is present
   # @param [String] filename The filename
   # @param [String] ogg_file_accept OGG file as end file accepted? (true/false)
   # @param [String] ffmpeg_binary Path to the ffmpeg binary
   def self.rip_prepare(filename, ogg_file_accept, ffmpeg_binary)
     # @note Checks if a *.m4a file is present. Then it routes to Ripper.rip
-    puts 'Checking if transcoding is needed. Depends on ogg_file_accept.'.colour(:yellow)
+    puts 'Checking if transcoding is needed. Depends on ogg_file_accept.'
+             .colour(:yellow)
     if File.exist?("#{filename}.m4a")
       puts 'TRANSCODING TO MP3'.colour(:yellow)
       ext = 'm4a'
@@ -61,15 +62,15 @@ class Ripper
   def self.rip(filename, ext, ogg_file_accept, ffmpeg_binary)
     # @note Initialize the file
     FFMPEG.ffmpeg_binary = ffmpeg_binary
-    filenamein = "#{filename}.#{ext}"
-    audio = FFMPEG::Movie.new(filenamein)
+    filename_in = "#{filename}.#{ext}"
+    audio = FFMPEG::Movie.new(filename_in)
     puts 'Initializing finished'.colour(:green)
     # @note Checking if valid
     puts 'Checking if the movie is valid.'.colour(:yellow)
     audio.valid?
     puts 'Validated'.colour(:green)
-    ext = convert(ogg_file_accept, ffmpeg_binary, filenamein, filename)
-    puts 'Transcoded'.colour(:green)
+    ext = convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
+    puts 'Transcoding finished'.colour(:green)
     [filename, ext]
   end
 
@@ -82,16 +83,16 @@ class Ripper
   # @param [String] filenamein The original file
   # @param [String] filename The transcoded file
   # @return [String] ext
-  def self.convert(ogg_file_accept, ffmpeg_binary, filenamein, filename)
+  def self.convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
     # @note Transcoding the file to MP3
     if ogg_file_accept == 'true'
-      system("#{ffmpeg_binary} -i #{filenamein} -acodec vorbis -vn -ac 2 -aq 60 -strict -2 #{filename}.ogg")
+      system("#{ffmpeg_binary} -i #{filename_in} -acodec vorbis -vn -ac 2 -aq
+ 60 -strict -2 #{filename}.ogg")
       ext = 'ogg'
-      #puts ext
     else
-      system("#{ffmpeg_binary} -i #{filenamein} -acodec libmp3lame -ac 2 -ab 192k #{filename}.mp3")
+      system("#{ffmpeg_binary} -i #{filename_in} -acodec libmp3lame -ac 2 -ab
+ 192k #{filename}.mp3")
       ext = 'mp3'
-      #puts ext
     end
     return ext
   end

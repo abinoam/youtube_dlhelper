@@ -8,8 +8,8 @@
           <li>stable tarballs for <a href="http://ftp.gnome.org/pub/GNOME/sources/glade/3.20/">Glade 3.20</a> for GTK+3</li>
         </ul>
 
-	<p>Or use our <a href="http://git.gnome.org/cgit/glade">git repository</a> to get the bleeding edge source code. To clone it you need to type:<br><br>
-	<code>git clone git://git.gnome.org/glade</code></p>
+	<p>Or use our <a href="https://git.launchpad.net/youtube-dlhelper">git repository</a> to get the bleeding edge source code. To clone it you need to type:<br><br>
+	<code>git clone https://git.launchpad.net/youtube-dlhelper</code></p>
 
     </div>
 

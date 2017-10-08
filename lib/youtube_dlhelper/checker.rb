@@ -37,11 +37,11 @@ module Checker
     if url.include? 'https'
       puts 'Checking if https URL is valid'.colour(:green)
       https_url_valid?(url)
-      return url
+      # return url
     else
       puts 'Checking if http URL is valid'.colour(:green)
       http_url_valid?(url)
-      return url
+      # return url
     end
   end
 
@@ -51,7 +51,7 @@ module Checker
     # @param [String] url Is the given URL to the Youtube file
     uri = URI.parse(url)
     response = Net::HTTP.start(uri.host, uri.port,
-                    :use_ssl => uri.scheme == 'https') do |http|
+                               use_ssl: uri.scheme == 'https') do |http|
       http.head(uri.path)
     end
     response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
@@ -73,7 +73,6 @@ module Checker
   # Ask for names, creates the folders and puts all into a $folder variable
   # @return [String] folder
   def self.check_target
-
     entry = ask 'What kind of entry do you have? (Interpret or Group)'
 
     subdir = case entry
@@ -87,29 +86,30 @@ module Checker
                ask 'Whats the name of the group?'
 
              else
-               puts 'Just the entries "Interpret" or "Group" are allowed'.colour(:red)
+               puts 'Just the entries "Interpret" or "Group" are allowed'
+                        .colour(:red)
                abort('Aborted')
              end
-    subdir.gsub!(/ /, '_')
-    folder = "#{ subdir }/Youtube-Music"
+    subdir.tr!(' ', '_')
+    folder = "#{subdir}/Youtube-Music"
     return folder
   end
 
-  # Checks if the targetdirectory are present. If not, it creates one
+  # Checks if the target directory are present. If not, it creates one
   # @param [String] music_dir Path to the music directory
-  # @param [String] folder Path to the targetfolder
-  def self.check_dir(music_dir, folder)
+  # @param [String] directory Path to the target folder
+  def self.check_dir(music_dir, directory)
     # @note Checking if musicdir exists
-    if Dir.exist?("#{music_dir}/#{folder}")
+    if Dir.exist?("#{music_dir}/#{directory}")
       puts 'Found directory. Im using it.'.colour(:green)
     else
       puts 'No directory found. Im creating it.'.colour(:green)
       # @note Creates the new directory in $music_dir/$folder
-      FileUtils.mkdir_p("#{music_dir}/#{folder}")
-      if Dir.exist?("#{music_dir}/#{folder}")
+      FileUtils.mkdir_p("#{music_dir}/#{directory}")
+      if Dir.exist?("#{music_dir}/#{directory}")
         puts 'Created new directory...'.colour(:green)
       else
-        fail('Cant create directory')
+        raise('Cant create directory')
       end
     end
   end
@@ -117,14 +117,14 @@ module Checker
   # This method checks if a oldconfig is available
   # @return [String] true or false
   def self.oldconfig_exists?
-    sysxdg = XDG['CONFIG_HOME']
-    sysconfdir = "#{sysxdg}/youtube_dlhelper"
-    if File.exist?("#{sysconfdir}/youtube_dlhelper.conf")
+    sys_xdg = XDG['CONFIG_HOME']
+    sysconf_dir = "#{sys_xdg}/youtube_dlhelper"
+    if File.exist?("#{sysconf_dir}/youtube_dlhelper.conf")
       puts 'Found configuration file and using it...'.colour(:yellow)
     else
       # @raise
       puts 'Please run rake setup'.colour(:red)
-      fail('Exiting now..').colour(:red)
+      raise('Exiting now..').colour(:red)
     end
   end
 
@@ -132,10 +132,10 @@ module Checker
   # This method smells of :reek:TooManyStatements
   # @return [String] ffmpeg_binary
   def self.which_decoder?
-    getavconv = `which avconv`
-    getffmpeg = `which ffmpeg`
-    avconv = p getavconv.chomp
-    ffmpeg = p getffmpeg.chomp
+    get_avconv = `which avconv`
+    get_ffmpeg = `which ffmpeg`
+    avconv = p get_avconv.chomp
+    ffmpeg = p get_ffmpeg.chomp
     ffmpeg_binary = ffmpeg if ffmpeg != ''
     ffmpeg_binary = avconv if avconv != ''
     return ffmpeg_binary

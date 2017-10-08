@@ -28,9 +28,9 @@ module Import
   # This Module parses the youtube_dlhelper.conf
   # @return [Array] music_dir, ogg_file_accept, ffmpeg_binary
   def self.import_config
-    sysxdg = XDG['CONFIG_HOME']
-    sysconfdir = "#{sysxdg}/youtube_dlhelper"
-    config = ParseConfig.new(File.join("#{sysconfdir}/youtube_dlhelper.conf"))
+    sys_xdg = XDG['CONFIG_HOME']
+    sysconf_dir = "#{sys_xdg}/youtube_dlhelper"
+    config = ParseConfig.new(File.join("#{sysconf_dir}/youtube_dlhelper.conf"))
     # @note Saving the variable musiddir
     music_dir = config['musicdir'].to_s
     # @note Saving the variable ogg_file_accept

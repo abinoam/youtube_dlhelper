@@ -31,48 +31,39 @@
 
 <body>
 
-    <div id="hdr">
+    <div id="hdr">TODO: Fix URL
         <a href="index.html"><img alt="logo" src="https://git.gnome.org/browse/glade/plain/data/icons/hicolor/48x48/apps/glade.png" style="margin: 0px 1em;"/>
-        <h1>Glade - A User Interface Designer</h1></a>
+        <h1>youtube_dlhelper - A Downloadhelper for Youtube</h1></a>
     </div>
 
     <div id="sidebar">
         <h1>Current Version: <strong>3.20</strong></h1>
         <ul>
           <li><a href="sources.html">Download Sources</a></li>
-          <li><a href="http://git.gnome.org/cgit/glade">Browse Sources</a></li>
+          <li><a href="https://rubygems.org/gems/youtube_dlhelper">Download Rubygem</a></li>
           <li><a href="http://ftp.gnome.org/pub/GNOME/binaries/win32/glade/">Windows Binaries</a></li>
-          <li><a href="http://ftp.gnome.org/pub/GNOME/binaries/mac/glade3/3.6/">Older MacOSX Binaries</a></li>
+          <script type='text/javascript' src='https://www.openhub.net/p/youtube_dlhelper/widgets/project_users?format=js&style=blue'></script>
         </ul>
-        <h1>User Survey</h1>
-	  <ul>
-	    <li><a href="https://blogs.gnome.org/xjuan/2016/02/08/developer-experience-hackfest-2016/">Preliminary results</a></li>
-	  </ul>
         <h1>Documentation</h1>
           <ul>
             <li><a href="http://live.gnome.org/Glade/Tutorials">Tutorials</a></li>
-            <li><a href="http://library.gnome.org/devel/gladeui/3.20/">API Reference</a></li>
+            <li><a href="http://www.rubydoc.info/gems/youtube_dlhelper">API Reference</a></li>
           </ul>
         <h1>Help</h1>
           <ul>
             <li><a href="http://lists.ximian.com/mailman/listinfo/glade-users">Users mailing list</a></li>
-            <li><a href="http://bugzilla.gnome.org/enter_bug.cgi?product=glade">File a bug</a></li>
+            <li><a href="https://bugs.launchpad.net/youtube-dlhelper/+filebug">File a bug</a></li>
           </ul>
         <h1>Development</h1>
           <ul>
             <li><a href="http://lists.ximian.com/mailman/listinfo/glade-devel">Developers mailing list</a></li>
-            <li><a href="https://bugzilla.gnome.org/buglist.cgi?query_format=advanced;bug_status=UNCONFIRMED;bug_status=NEW;bug_status=ASSIGNED;bug_status=REOPENED;product=glade">Bug list</a></li>
+            <li><a href="https://bugs.launchpad.net/youtube-dlhelper">Bug list</a></li>
             <li><a href="http://live.gnome.org/Glade/Roadmap">Roadmap</a></li>
             <li><a href="https://wiki.gnome.org/Apps/Glade">Wiki</a></li>
           </ul>
-          <ul id="ircinfo">
-            <li><strong>IRC</strong></li>
-            <li><strong>server: </strong>irc.gimp.net</li>
-            <li><strong>channel: </strong>#glade3</li>
-          </ul>
         <h1>Related tools</h1>
           <ul>
-            <li><a href="http://projects.gnome.org/anjuta/">Anjuta IDE</a></li>
+            <li><a href="https://www.jetbrains.com/ruby/">Rubymine IDE</a></li>
             <li><a href="http://projects.gnome.org/nemiver/">Nemiver Debugger</a></li>
             <li><a href="https://wiki.gnome.org/Apps/Devhelp">Devhelp API browser</a></li>
             <li><a href="http://chipx86.github.com/gtkparasite/">Parasite</a></li>
