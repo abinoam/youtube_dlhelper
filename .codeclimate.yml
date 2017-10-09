@@ -1,16 +1,10 @@
-#Save as .codeclimate.yml (note leading .) in project root directory
 languages:
   Ruby: true
-  #avaScript: true
-  #HP: true
-  #ython: true
+
 exclude_paths:
   - .bundle/**
   - spec/**/*
   - benchmarks/**/*
   - '*.min.js'
   - '**/tests/**'
-  - docbook/**/*
-  - docs/**/*
-  - packaging/**/*
-  - web/**/*
+  - Gemfile*

@@ -26,7 +26,4 @@ exclude_paths:
   - benchmarks/**/*
   - '*.min.js'
   - '**/tests/**'
-  - docbook/**/*
-  - docs/**/*
-  - packaging/**/*
-  - web/**/*
+  - Gemfile*

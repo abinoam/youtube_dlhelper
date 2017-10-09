@@ -24,3 +24,4 @@ filter:
         - '*.min.js'
         - '**/tests/**'
         - docs/**/*
+        - Gemfile*
