@@ -23,7 +23,4 @@ filter:
         - benchmarks/**/*
         - '*.min.js'
         - '**/tests/**'
-        - docbook/**/*
         - docs/**/*
-        - packaging/**/*
-        - web/**/*
