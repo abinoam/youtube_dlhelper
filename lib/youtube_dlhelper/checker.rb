@@ -35,11 +35,11 @@ module Checker
     puts 'Checking prefix'.color(:green)
     puts url
     if url.include? 'https'
-      puts 'Checking if https URL is valid'.colour(:green)
+      puts 'Checking if https URL is valid'.color(:green)
       https_url_valid?(url)
       # return url
     else
-      puts 'Checking if http URL is valid'.colour(:green)
+      puts 'Checking if http URL is valid'.color(:green)
       http_url_valid?(url)
       # return url
     end
@@ -50,8 +50,7 @@ module Checker
   def self.https_url_valid?(url)
     # @param [String] url Is the given URL to the Youtube file
     uri = URI.parse(url)
-    response = Net::HTTP.start(uri.host, uri.port,
-                               use_ssl: uri.scheme == 'https') do |http|
+    response = Net::HTTP.start(uri.host, uri.port, use_ssl: uri.scheme == 'https') do |http|
       http.head(uri.path)
     end
     response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
@@ -68,8 +67,6 @@ module Checker
     response.is_a?(Net::HTTPSuccess) || response.is_a?(Net::HTTPRedirection)
   end
 
-  # rubocop:disable Metrics/LineLength
-  # This method smells of :reek:TooManyStatements
   # Ask for names, creates the folders and puts all into a $folder variable
   # @return [String] folder
   def self.check_target
@@ -87,7 +84,7 @@ module Checker
 
              else
                puts 'Just the entries "Interpret" or "Group" are allowed'
-                        .colour(:red)
+                        .color(:red)
                abort('Aborted')
              end
     subdir.tr!(' ', '_')
@@ -101,13 +98,13 @@ module Checker
   def self.check_dir(music_dir, directory)
     # @note Checking if musicdir exists
     if Dir.exist?("#{music_dir}/#{directory}")
-      puts 'Found directory. Im using it.'.colour(:green)
+      puts 'Found directory. Im using it.'.color(:green)
     else
-      puts 'No directory found. Im creating it.'.colour(:green)
+      puts 'No directory found. Im creating it.'.color(:green)
       # @note Creates the new directory in $music_dir/$folder
       FileUtils.mkdir_p("#{music_dir}/#{directory}")
       if Dir.exist?("#{music_dir}/#{directory}")
-        puts 'Created new directory...'.colour(:green)
+        puts 'Created new directory...'.color(:green)
       else
         raise('Cant create directory')
       end
@@ -120,11 +117,11 @@ module Checker
     sys_xdg = XDG['CONFIG_HOME']
     sysconf_dir = "#{sys_xdg}/youtube_dlhelper"
     if File.exist?("#{sysconf_dir}/youtube_dlhelper.conf")
-      puts 'Found configuration file and using it...'.colour(:yellow)
+      puts 'Found configuration file and using it...'.color(:yellow)
     else
       # @raise
-      puts 'Please run rake setup'.colour(:red)
-      raise('Exiting now..').colour(:red)
+      puts 'Please run rake setup'.color(:red)
+      raise('Exiting now..').color(:red)
     end
   end
 

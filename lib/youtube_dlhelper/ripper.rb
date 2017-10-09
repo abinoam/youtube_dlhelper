@@ -32,25 +32,22 @@ class Ripper
   # @param [String] ffmpeg_binary Path to the ffmpeg binary
   def self.rip_prepare(filename, ogg_file_accept, ffmpeg_binary)
     # @note Checks if a *.m4a file is present. Then it routes to Ripper.rip
-    puts 'Checking if transcoding is needed. Depends on ogg_file_accept.'
-             .colour(:yellow)
+    puts 'Checking if transcoding is needed. Depends on ogg_file_accept.'.color(:yellow)
     if File.exist?("#{filename}.m4a")
-      puts 'TRANSCODING TO MP3'.colour(:yellow)
+      puts 'TRANSCODING TO MP3'.color(:yellow)
       ext = 'm4a'
       rip(filename, ext, ogg_file_accept, ffmpeg_binary)
     elsif File.exist?("#{filename}.ogg") && ogg_file_accept == 'false'
-      puts 'TRANSCODING TO MP3'.colour(:yellow)
+      puts 'TRANSCODING TO MP3'.color(:yellow)
       ext = 'ogg'
       rip(filename, ext, ogg_file_accept, ffmpeg_binary)
     elsif File.exist?("#{filename}.ogg")
-      puts 'Already a ogg file. No transcoding needed'.colour(:green)
+      puts 'Already a ogg file. No transcoding needed'.color(:green)
     else
-      puts 'No transcoding needed'.colour(:green)
+      puts 'No transcoding needed'.color(:green)
     end
   end
 
-  # rubocop:disable Metrics/LineLength
-  # This method smells of :reek:TooManyStatements
   # This method smells of :reek:LongParameterList
   # Method for transcoding the *.m4a file to *.mp3. Output should be a valid MP3
   # file.
@@ -64,13 +61,13 @@ class Ripper
     FFMPEG.ffmpeg_binary = ffmpeg_binary
     filename_in = "#{filename}.#{ext}"
     audio = FFMPEG::Movie.new(filename_in)
-    puts 'Initializing finished'.colour(:green)
+    puts 'Initializing finished'.color(:green)
     # @note Checking if valid
-    puts 'Checking if the movie is valid.'.colour(:yellow)
+    puts 'Checking if the movie is valid.'.color(:yellow)
     audio.valid?
-    puts 'Validated'.colour(:green)
+    puts 'Validated'.color(:green)
     ext = convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
-    puts 'Transcoding finished'.colour(:green)
+    puts 'Transcoding finished'.color(:green)
     [filename, ext]
   end
 
@@ -86,12 +83,10 @@ class Ripper
   def self.convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
     # @note Transcoding the file to MP3
     if ogg_file_accept == 'true'
-      system("#{ffmpeg_binary} -i #{filename_in} -acodec vorbis -vn -ac 2 -aq
- 60 -strict -2 #{filename}.ogg")
+      system("#{ffmpeg_binary} -i #{filename_in} -acodec vorbis -vn -ac 2 -aq 60 -strict -2 #{filename}.ogg")
       ext = 'ogg'
     else
-      system("#{ffmpeg_binary} -i #{filename_in} -acodec libmp3lame -ac 2 -ab
- 192k #{filename}.mp3")
+      system("#{ffmpeg_binary} -i #{filename_in} -acodec libmp3lame -ac 2 -ab 192k #{filename}.mp3")
       ext = 'mp3'
     end
     return ext

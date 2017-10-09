@@ -1,4 +1,4 @@
-.idea
-coverage
-pkg
+.idea/**/*
+coverage/**/*
+pkg/**/*
 .gitconfig

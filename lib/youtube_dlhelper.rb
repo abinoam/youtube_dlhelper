@@ -53,7 +53,7 @@ class YoutubeDlhelper
   music_dir_get, ogg_file_accept = Import.import_config
   music_dir = "#{home}/#{music_dir_get}"
 
-  puts "#{my_name} #{VERSION}".colour(:yellow)
+  puts "#{my_name} #{VERSION}".color(:yellow)
   puts
   puts 'Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>'
   puts 'Description: This gem can download music from YouTube'
@@ -71,22 +71,21 @@ class YoutubeDlhelper
   directory = Checker.check_target
 
   # @note Prints out which targetfolder is choosen.
-  puts 'SEARCHING FOR TARGETDIR'.colour(:yellow)
-  puts "Your present target directory is: #{music_dir}/#{directory}".colour
-  (:yellow)
-  puts 'You can choose another one directly in the config file.'.colour(:yellow)
-  puts 'Checking now, if your target directory exists...'.colour(:yellow)
+  puts 'SEARCHING FOR TARGETDIR'.color(:yellow)
+  puts "Your present target directory is: #{music_dir}/#{directory}".color(:yellow)
+  puts 'You can choose another one directly in the config file.'.color(:yellow)
+  puts 'Checking now, if your target directory exists...'.color(:yellow)
   # @param [String] music_dir Path to the music directory
   # @param [String] folder Path to the target directory
   Checker.check_dir(music_dir, directory)
 
   # @note Using FileUtils to enter the generated directory
-  puts 'SWITCHING TO TARGETDIR'.colour(:yellow)
+  puts 'SWITCHING TO TARGETDIR'.color(:yellow)
   # @param [String] music_dir Path to the music directory
   # @param [String] folder Path to the target directory
   FileUtils.cd("#{music_dir}/#{directory}") do
-    puts "Now we are switched to directory #{Dir.pwd}".colour(:yellow)
-    puts 'DOWNLOADING YOUR VIDEO'.colour(:yellow)
+    puts "Now we are switched to directory #{Dir.pwd}".color(:yellow)
+    puts 'DOWNLOADING YOUR VIDEO'.color(:yellow)
 
     # @param [String] url Is the given URL to the Youtube file
     filename, filename_old = Downloader.get(url)
@@ -95,14 +94,12 @@ class YoutubeDlhelper
     # @param [String] ogg_file_accept OGG file as end file accepted?
     # (true/false)
     # @param [String] ffmpeg_binary Path to the ffmpeg binary
-    filename_new, extension = Ripper.rip_prepare(filename, ogg_file_accept,
-                                                ffmpeg_binary)
+    filename_new, extension = Ripper.rip_prepare(filename, ogg_file_accept, ffmpeg_binary)
 
     # @param [String] filenamenew The new produced filename
     Checker.cleanup(filename_new, filename_old)
 
-    puts "Now you can find your file in #{music_dir}/#{directory}".colour
-    (:yellow)
+    puts "Now you can find your file in #{music_dir}/#{directory}".color(:yellow)
 
     Notifier.run
   end

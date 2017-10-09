@@ -33,7 +33,8 @@ describe 'Checker' do
   describe '.which_decoder?' do
     it 'checks what decoder can be used' do
       ffmpeg_binary = Checker.which_decoder?
-      expect(ffmpeg_binary).equal? '/usr/bin/ffmpeg' || '/usr/bin/avconv'
+      #expect(ffmpeg_binary).equal? '/usr/bin/ffmpeg' || '/usr/bin/avconv'
+      %w{/usr/bin/ffmpeg /usr/bin/avconv}.include?(ffmpeg_binary)
     end
   end
 end

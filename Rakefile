@@ -4,11 +4,14 @@ require 'rubygems'
 require 'hoe'
 
 Hoe.plugin :bundler
+Hoe.plugin :email
+Hoe.plugin :git
 Hoe.plugin :manns
+Hoe.plugin :rdoc
 Hoe.plugin :reek
 Hoe.plugin :rubocop
 Hoe.plugin :rubygems
-#Hoe.plugin :seattlerb
+Hoe.plugin :version
 
 ###########################################DEVELOPING ZONE##############################################################
 # rubocop:disable Metrics/LineLength
@@ -31,10 +34,10 @@ Hoe.spec 'youtube_dlhelper' do
   dependency 'youtube-dl.rb', '~> 0.3.1.2016'
   dependency 'xdg', '~> 2.2'
   dependency 'manpages', '~> 0.6'
-  dependency 'hoe', '~> 3.16'
 
   extra_dev_deps << ['coveralls', '~> 0.8']
   extra_dev_deps << ['hoe-bundler', '~> 1.3']
+  extra_dev_deps << ['hoe-git', '~> 1.6']
   extra_dev_deps << ['hoe-manns', '~> 1.6']
   extra_dev_deps << ['hoe-reek', '~> 1.1']
   extra_dev_deps << ['hoe-rubocop', '~> 1.0']
