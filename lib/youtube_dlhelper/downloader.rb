@@ -26,6 +26,7 @@ require 'fileutils'
 # Module for all Downloading things
 module Downloader
   # Accessing the url with get(url) via youtube-dl.rb
+  # This method smells of :reek:TooManyStatements
   # @param [String] url Is the given URL to the Youtube file
   def self.get(url)
     puts 'Downloading file...'.color(:green)
@@ -33,16 +34,18 @@ module Downloader
     video = YoutubeDL.download(url)
     video.filename # => "Adele - Hello-YQHsXMglC9A.f137.mp4"
 
-    video_with_title = YoutubeDL.download(url, extract_audio: true, audio_format: 'best', :audio_quality =>
-                                              0, output: '%(title)s.%(ext)s')
+    # rubocop:disable Metrics/LineLength
+    video_with_title = YoutubeDL.download(url, extract_audio: true, audio_format: 'best', audio_quality: 0, output: '%(title)s.%(ext)s')
     video_with_title.filename # => "Adele - Hello.mp4"
 
     title = YoutubeDL::Runner.new(url, get_title: true).run
+    # rubocop:disable Lint/Void
     title # => "Adele - Hello"
     puts 'Downloading done...'.colour(:green)
     filename = video_with_title.filename
 
-    rename(filename)
+    filename_new = rename(filename)
+    return filename_new
   end
 
   # rubocop:disable Metrics/AbcSize
@@ -67,7 +70,7 @@ module Downloader
     puts filename_new
     puts ext
     FileUtils.mv("#{filename}.#{ext}", "#{filename_new}.#{ext}")
-    [filename_new, filename]
+    [filename_new]
   end
 
   # It checks what old file are available

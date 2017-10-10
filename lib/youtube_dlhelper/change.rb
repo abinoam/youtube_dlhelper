@@ -17,6 +17,7 @@
 
 # Dependencies
 
+# Provides search and replace
 class YoutubeDlhelper
   # Method for replacing content in a file
   # @param [String] search is the search text in the target file
@@ -26,8 +27,8 @@ class YoutubeDlhelper
     text = File.read(file)
     new_value = text.gsub(search, replace)
     puts new_value
-    File.open(file, 'w') do |file1|
-      file1.puts new_value
+    File.open(file, 'w') do |replacefile|
+      replacefile.puts new_value
     end
   end
 end

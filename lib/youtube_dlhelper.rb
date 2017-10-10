@@ -88,16 +88,15 @@ class YoutubeDlhelper
     puts 'DOWNLOADING YOUR VIDEO'.color(:yellow)
 
     # @param [String] url Is the given URL to the Youtube file
-    filename, filename_old = Downloader.get(url)
+    filename = Downloader.get(url)
 
     # @param [String] filename The filename
     # @param [String] ogg_file_accept OGG file as end file accepted?
     # (true/false)
     # @param [String] ffmpeg_binary Path to the ffmpeg binary
-    filename_new, extension = Ripper.rip_prepare(filename, ogg_file_accept, ffmpeg_binary)
+    Ripper.rip_prepare(filename, ogg_file_accept, ffmpeg_binary)
 
-    # @param [String] filenamenew The new produced filename
-    Checker.cleanup(filename_new, filename_old)
+    Checker.cleanup
 
     puts "Now you can find your file in #{music_dir}/#{directory}".color(:yellow)
 

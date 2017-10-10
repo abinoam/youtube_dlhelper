@@ -25,7 +25,7 @@ Hoe.spec 'youtube_dlhelper' do
   self.extra_rdoc_files = FileList['*.rdoc'].to_a
   self.post_install_message = '*** Run rake setup to finish the installation ***'
 
-  dependency 'bundler', '~> 1.15'
+  dependency 'bundler', '1.15.4'
   dependency 'parseconfig', '~> 1.0'
   dependency 'streamio-ffmpeg', '~> 3.0'
   dependency 'rainbow', '~> 2.2'

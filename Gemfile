@@ -4,7 +4,7 @@
 
 source "https://rubygems.org/"
 
-gem "bundler", "~>1.15"
+gem "bundler", "1.15.4"
 gem "parseconfig", "~>1.0"
 gem "streamio-ffmpeg", "~>3.0"
 gem "rainbow", "~>2.2"

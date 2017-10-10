@@ -68,6 +68,7 @@ module Checker
   end
 
   # Ask for names, creates the folders and puts all into a $folder variable
+  # This method smells of :reek:TooManyStatements
   # @return [String] folder
   def self.check_target
     entry = ask 'What kind of entry do you have? (Interpret or Group)'
@@ -83,8 +84,7 @@ module Checker
                ask 'Whats the name of the group?'
 
              else
-               puts 'Just the entries "Interpret" or "Group" are allowed'
-                        .color(:red)
+               puts 'Just the entries "Interpret" or "Group" are allowed'.color(:red)
                abort('Aborted')
              end
     subdir.tr!(' ', '_')
@@ -103,11 +103,7 @@ module Checker
       puts 'No directory found. Im creating it.'.color(:green)
       # @note Creates the new directory in $music_dir/$folder
       FileUtils.mkdir_p("#{music_dir}/#{directory}")
-      if Dir.exist?("#{music_dir}/#{directory}")
-        puts 'Created new directory...'.color(:green)
-      else
-        raise('Cant create directory')
-      end
+      puts 'Created new directory...'.color(:green) if Dir.exist?("#{music_dir}/#{directory}")
     end
   end
 
@@ -141,19 +137,15 @@ module Checker
   # Cleaner method for unneeded files
   # This method smells of :reek:TooManyStatements
   # @param [String] filename The name of the new produced file
-  def self.cleanup(filename, filenameold)
+  def self.cleanup
     puts 'Cleaning up directory'.color(:green)
     # @note Cleanup the temp files
-    Dir.glob("#{filename}*.mp4").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filename}*.m4a").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filename}*.webm").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filename}*.opus").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filename}*.mkv").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filenameold}*.mp4").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filenameold}*.m4a").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filenameold}*.webm").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filenameold}*.opus").each { |f| File.delete(f) if File.exist?(f) }
-    Dir.glob("#{filenameold}*.mkv").each { |f| File.delete(f) if File.exist?(f) }
+    formats = %w[*.mp4 *.m4a *.webm *.opus *.mkv]
+    formats.each do |format|
+      Dir.glob(format).to_s.each do |file|
+        File.delete(file) if File.exist?(file)
+      end
+    end
 
     puts 'Finished cleaning up'.color(:green)
   end

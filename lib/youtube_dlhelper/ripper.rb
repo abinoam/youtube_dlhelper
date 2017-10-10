@@ -61,15 +61,12 @@ class Ripper
     FFMPEG.ffmpeg_binary = ffmpeg_binary
     filename_in = "#{filename}.#{ext}"
     audio = FFMPEG::Movie.new(filename_in)
-    puts 'Initializing finished'.color(:green)
-    # @note Checking if valid
-    puts 'Checking if the movie is valid.'.color(:yellow)
-    audio.valid?
-    puts 'Validated'.color(:green)
+    puts 'Checking if the movie is valid.'.color(:yellow) if audio.valid?
     ext = convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
-    puts 'Transcoding finished'.color(:green)
     [filename, ext]
   end
+
+
 
   # Method for converting stuff
   # This method smells of :reek:TooManyStatements
