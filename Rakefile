@@ -17,7 +17,7 @@ Hoe.plugin :version
 # rubocop:disable Metrics/LineLength
 Hoe.spec 'youtube_dlhelper' do
   developer('Sascha Manns', 'Sascha.Manns@mailbox.org')
-  license 'MIT' # this should match the license in the README
+  license 'GPL3' # this should match the license in the README
   require_ruby_version '>= 2.2.3'
 
   self.history_file = 'History.rdoc'
@@ -30,6 +30,7 @@ Hoe.spec 'youtube_dlhelper' do
   dependency 'streamio-ffmpeg', '~> 3.0'
   dependency 'rainbow', '~> 2.2'
   dependency 'addressable', '~> 2.5'
+  dependency 'highline', '~> 1.7'
   dependency 'notifier', '~> 0.5'
   dependency 'youtube-dl.rb', '~> 0.3.1.2016'
   dependency 'xdg', '~> 2.2'

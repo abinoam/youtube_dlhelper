@@ -21,19 +21,19 @@
 # Dependencies
 require 'rainbow/ext/string'
 require 'fileutils'
+require 'highline/import'
 require 'net/http'
 require 'uri'
 require 'xdg'
 
 # The Checker module contains different methods to check anything
 module Checker
-  # @note This method checks if a url is valid
+  # This method checks if a url is valid
   # This method smells of :reek:TooManyStatements
   # @param [String] url Is the given URL to the Youtube file
   # @return [String] url
   def self.external_url_is_valid?(url)
     puts 'Checking prefix'.color(:green)
-    puts url
     if url.include? 'https'
       puts 'Checking if https URL is valid'.color(:green)
       https_url_valid?(url)
@@ -88,15 +88,15 @@ module Checker
                abort('Aborted')
              end
     subdir.tr!(' ', '_')
-    folder = "#{subdir}/Youtube-Music"
-    return folder
+    directory = "#{subdir}/Youtube-Music"
+    return directory
   end
 
   # Checks if the target directory are present. If not, it creates one
   # @param [String] music_dir Path to the music directory
   # @param [String] directory Path to the target folder
   def self.check_dir(music_dir, directory)
-    # @note Checking if musicdir exists
+    # @note Checking if music dir exists
     if Dir.exist?("#{music_dir}/#{directory}")
       puts 'Found directory. Im using it.'.color(:green)
     else
@@ -113,7 +113,7 @@ module Checker
     sys_xdg = XDG['CONFIG_HOME']
     sysconf_dir = "#{sys_xdg}/youtube_dlhelper"
     if File.exist?("#{sysconf_dir}/youtube_dlhelper.conf")
-      puts 'Found configuration file and using it...'.color(:yellow)
+      puts 'Found configuration file and using it...'.color(:green)
     else
       # @raise
       puts 'Please run rake setup'.color(:red)
@@ -135,14 +135,13 @@ module Checker
   end
 
   # Cleaner method for unneeded files
-  # This method smells of :reek:TooManyStatements
   # @param [String] filename The name of the new produced file
   def self.cleanup
     puts 'Cleaning up directory'.color(:green)
     # @note Cleanup the temp files
-    formats = %w[*.mp4 *.m4a *.webm *.opus *.mkv]
+    formats = %w(*.mp4 *.m4a *.webm *.opus *.mkv)
     formats.each do |format|
-      Dir.glob(format).to_s.each do |file|
+      Dir.glob(format).each do |file|
         File.delete(file) if File.exist?(file)
       end
     end

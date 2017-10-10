@@ -1,4 +1,4 @@
-# Youtube converter main class
+# Youtube converter notifier class
 #
 # Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 #

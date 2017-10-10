@@ -17,7 +17,6 @@
 
 # Class Documentation:
 # http://www.rubydoc.info/github/saigkill/youtube_dlhelper/Import
-# Copyright (C) 2013-2017 Sascha Manns <Sascha.Manns@mailbox.org>
 
 # Dependencies
 require 'parseconfig'

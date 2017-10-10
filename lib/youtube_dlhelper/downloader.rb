@@ -29,7 +29,7 @@ module Downloader
   # This method smells of :reek:TooManyStatements
   # @param [String] url Is the given URL to the Youtube file
   def self.get(url)
-    puts 'Downloading file...'.color(:green)
+    puts 'Downloading file...'.color(:aquamarine)
     # Thanks for the gist https://gist.github.com/sapslaj/edb51218357fa33b6c4c
     video = YoutubeDL.download(url)
     video.filename # => "Adele - Hello-YQHsXMglC9A.f137.mp4"
@@ -59,7 +59,7 @@ module Downloader
     ext = file_exist_ogg_m4a(filename)
     # @note Replacing blanks with underscrores and delete non standard chars in
     # filename
-    filename_new0 = filename.tr('/ /', '_')
+    filename_new0 = filename.tr(' ', '_')
     pattern = /[a-zA-Z0-9\-\s\_]/
     filename_new = filename_new0.split(//).keep_if do |chr|
       chr =~ pattern

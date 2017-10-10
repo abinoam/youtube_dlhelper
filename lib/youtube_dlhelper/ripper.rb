@@ -32,13 +32,13 @@ class Ripper
   # @param [String] ffmpeg_binary Path to the ffmpeg binary
   def self.rip_prepare(filename, ogg_file_accept, ffmpeg_binary)
     # @note Checks if a *.m4a file is present. Then it routes to Ripper.rip
-    puts 'Checking if transcoding is needed. Depends on ogg_file_accept.'.color(:yellow)
+    puts 'Checking if transcoding is needed. Depends on ogg_file_accept.'.color(:aquamarine)
     if File.exist?("#{filename}.m4a")
-      puts 'TRANSCODING TO MP3'.color(:yellow)
+      puts 'TRANSCODING TO MP3'.color(:aquamarine)
       ext = 'm4a'
       rip(filename, ext, ogg_file_accept, ffmpeg_binary)
     elsif File.exist?("#{filename}.ogg") && ogg_file_accept == 'false'
-      puts 'TRANSCODING TO MP3'.color(:yellow)
+      puts 'TRANSCODING TO MP3'.color(:aquamarine)
       ext = 'ogg'
       rip(filename, ext, ogg_file_accept, ffmpeg_binary)
     elsif File.exist?("#{filename}.ogg")
@@ -61,12 +61,10 @@ class Ripper
     FFMPEG.ffmpeg_binary = ffmpeg_binary
     filename_in = "#{filename}.#{ext}"
     audio = FFMPEG::Movie.new(filename_in)
-    puts 'Checking if the movie is valid.'.color(:yellow) if audio.valid?
+    puts 'Checking if the movie is valid.'.color(:aquamarine) if audio.valid?
     ext = convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
     [filename, ext]
   end
-
-
 
   # Method for converting stuff
   # This method smells of :reek:TooManyStatements
@@ -78,7 +76,7 @@ class Ripper
   # @param [String] filename The transcoded file
   # @return [String] ext
   def self.convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
-    # @note Transcoding the file to MP3
+    # Transcoding the file to MP3
     if ogg_file_accept == 'true'
       system("#{ffmpeg_binary} -i #{filename_in} -acodec vorbis -vn -ac 2 -aq 60 -strict -2 #{filename}.ogg")
       ext = 'ogg'
