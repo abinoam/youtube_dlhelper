@@ -11,7 +11,7 @@ gem "rainbow", "~>2.2"
 gem "addressable", "~>2.5"
 gem "highline", "~>1.7"
 gem "notifier", "~>0.5"
-gem "youtube-dl.rb", "~>0.3.1.2016"
+gem "youtube-dl.rb", "~>0.3.1.2017", :git => 'git://github.com/n1ckbren/youtube-dl.rb'
 gem "xdg", "~>2.2"
 gem "manpages", "~>0.6"
 

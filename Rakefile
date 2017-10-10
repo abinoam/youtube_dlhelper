@@ -32,7 +32,7 @@ Hoe.spec 'youtube_dlhelper' do
   dependency 'addressable', '~> 2.5'
   dependency 'highline', '~> 1.7'
   dependency 'notifier', '~> 0.5'
-  dependency 'youtube-dl.rb', '~> 0.3.1.2016'
+  dependency 'youtube-dl.rb', '~> 0.3.1.2017'
   dependency 'xdg', '~> 2.2'
   dependency 'manpages', '~> 0.6'
 

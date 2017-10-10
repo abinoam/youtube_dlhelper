@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/n1ckbren/youtube-dl.rb
+  revision: b8423e3713f7f5f74a52fc987c324178315a8d78
+  specs:
+    youtube-dl.rb (0.3.1.2017.06.25)
+      cocaine (>= 0.5.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -106,8 +113,6 @@ GEM
       descendants_tracker (~> 0.0, >= 0.0.3)
       equalizer (~> 0.0, >= 0.0.9)
     xdg (2.2.3)
-    youtube-dl.rb (0.3.1.2016.09.11.1)
-      cocaine (>= 0.5.4)
 
 PLATFORMS
   ruby
@@ -135,7 +140,7 @@ DEPENDENCIES
   rubocop (~> 0.50)
   streamio-ffmpeg (~> 3.0)
   xdg (~> 2.2)
-  youtube-dl.rb (~> 0.3.1.2016)
+  youtube-dl.rb (~> 0.3.1.2017)!
 
 BUNDLED WITH
    1.15.4
