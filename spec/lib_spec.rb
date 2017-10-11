@@ -14,14 +14,14 @@ describe 'Checker' do
   describe '.external_url_is_valid?' do
     context 'using http url' do
       it 'get an url, test it and give back when valid' do
-        url = Checker.external_url_is_valid?('http://www.youtube.com/watch?v=UgdSarGbE0g')
+        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=1tsw3nKDlBE')
         expect(url).equal? 'true'
       end
     end
 
     context 'using https url' do
       it 'get the url, test and give back when valid' do
-        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=UgdSarGbE0g')
+        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=1tsw3nKDlBE')
         expect(url).equal? 'true'
       end
     end
@@ -38,7 +38,7 @@ end
 describe 'Downloader' do
   describe '.get' do
     it 'downloads a file from youtube' do
-      Downloader.get('https://www.youtube.com/watch?v=UgdSarGbE0g')
+      Downloader.get('https://www.youtube.com/watch?v=1tsw3nKDlBE')
       expect(File.exist?("#{tempfile}.mp4")).equal? 'true'
     end
   end
