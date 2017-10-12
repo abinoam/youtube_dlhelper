@@ -42,7 +42,7 @@ before_install:
     - tar xvfJ ffmpeg-git-64bit-static.tar.xz
     - popd
     - bundle install
-    - sudo chmod 755 ~/.rvm/gems/*/gems/youtube-dl.rb/vendor/bin/youtube-dl
+    #- sudo chmod 755 ~/.rvm/gems/*/gems/youtube-dl.rb/vendor/bin/youtube-dl
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose
