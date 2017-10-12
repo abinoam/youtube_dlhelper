@@ -6,22 +6,22 @@ require File.join(File.dirname(__FILE__), '..', '/lib/youtube_dlhelper/downloade
 require File.join(File.dirname(__FILE__), '..', '/lib/youtube_dlhelper/import_config')
 require File.join(File.dirname(__FILE__), '..', '/lib/youtube_dlhelper/ripper')
 
-tempfile = 'Rainbow_-_Stargazer_Live_in_Nrnberg_1976'
-tempfile1 = 'Rainbow - Stargazer (Live in Nürnberg 1976)'
+tempfile = 'AC_DC_-_Hells_Bells_from_Live_At_Donington'
+tempfile1 = 'AC_DC - Hells Bells (from Live At Donington)'
 ffmpeg_binary = '/usr/bin/ffmpeg'
 
 describe 'Checker' do
   describe '.external_url_is_valid?' do
     context 'using http url' do
       it 'get an url, test it and give back when valid' do
-        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=1tsw3nKDlBE')
+        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=qFJFonWfBBM')
         expect(url).equal? 'true'
       end
     end
 
     context 'using https url' do
       it 'get the url, test and give back when valid' do
-        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=1tsw3nKDlBE')
+        url = Checker.external_url_is_valid?('https://www.youtube.com/watch?v=qFJFonWfBBM')
         expect(url).equal? 'true'
       end
     end
@@ -38,7 +38,7 @@ end
 describe 'Downloader' do
   describe '.get' do
     it 'downloads a file from youtube' do
-      Downloader.get('https://www.youtube.com/watch?v=1tsw3nKDlBE')
+      Downloader.get('https://www.youtube.com/watch?v=qFJFonWfBBM')
       expect(File.exist?("#{tempfile}.mp4")).equal? 'true'
     end
   end
