@@ -36,8 +36,13 @@ before_install:
     - gem install bundler
     - sudo apt-get update
     - sudo apt-get install software-properties-common -y
-    - sudo apt-get install libav-tools libavcodec-extra autoconf -y
-    - sudo chmod 755 ~/build/saigkill/youtube_dlhelper/vendor/bundle/ruby/*/bundler/gems/youtube-dl.rb-*/vendor/bin/youtube-dl
+    - sudo apt-get install libavcodec-extra -y
+    - pushd ~/bin
+    - wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
+    - tar xvfJ ffmpeg-git-64bit-static.tar.xz
+    - popd
+    - bundle install
+    - sudo chmod 755 ~/.rvm/gems/*/gems/youtube-dl.rb/vendor/bin/youtube-dl
 
 after_success:
     - CI=true TRAVIS=true coveralls --verbose

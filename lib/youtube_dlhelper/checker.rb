@@ -124,13 +124,10 @@ module Checker
   # This method checks which decoder is available
   # This method smells of :reek:TooManyStatements
   # @return [String] ffmpeg_binary
-  def self.which_decoder?
-    get_avconv = `which avconv`
+  def self.get_ffmpeg_binary
     get_ffmpeg = `which ffmpeg`
-    avconv = p get_avconv.chomp
     ffmpeg = p get_ffmpeg.chomp
     ffmpeg_binary = ffmpeg if ffmpeg != ''
-    ffmpeg_binary = avconv if avconv != ''
     return ffmpeg_binary
   end
 

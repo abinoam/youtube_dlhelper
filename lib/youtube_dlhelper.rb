@@ -60,7 +60,7 @@ class YoutubeDlhelper
   puts 'File bug reports there: https://bugs.launchpad.net/youtube-dlhelper'.color(:yellow)
 
   # Check which decoder should used
-  ffmpeg_binary = Checker.which_decoder?
+  ffmpeg_binary = Checker.get_ffmpeg_binary
 
   puts 'CHECKING TARGET'.color(:aquamarine)
   # Checks if target directory is present. Otherwise it creates one
