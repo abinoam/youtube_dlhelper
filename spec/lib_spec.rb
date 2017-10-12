@@ -27,10 +27,10 @@ describe 'Checker' do
     end
   end
 
-  describe '.which_decoder?' do
+  describe '.get_ffmpeg_binary' do
     it 'checks what decoder can be used' do
-      ffmpeg_binary = Checker.which_decoder?
-      %w[/usr/bin/ffmpeg /usr/bin/avconv].include?(ffmpeg_binary)
+      ffmpeg_binary = Checker.get_ffmpeg_binary
+      %w[bin/ffmpeg].include?(ffmpeg_binary)
     end
   end
 end
