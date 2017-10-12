@@ -40,7 +40,7 @@ before_install:
     - pushd ~/bin
     - wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-64bit-static.tar.xz
     - tar xvfJ ffmpeg-git-64bit-static.tar.xz
-    - cp ffmpeg-git-*-64bit-static/* .
+    - cp -a ffmpeg-git-*-64bit-static/* .
     - rm -rf ffmpeg-git-*-64bit-static
     - popd
     - bundle install
