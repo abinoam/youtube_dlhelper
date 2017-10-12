@@ -8,7 +8,7 @@ require File.join(File.dirname(__FILE__), '..', '/lib/youtube_dlhelper/ripper')
 
 tempfile = 'AC_DC_-_Hells_Bells_from_Live_At_Donington'
 tempfile1 = 'AC_DC - Hells Bells (from Live At Donington)'
-ffmpeg_binary = '/usr/bin/ffmpeg'
+ffmpeg_binary = '/home/travis/bin/ffmpeg'
 
 describe 'Checker' do
   describe '.external_url_is_valid?' do

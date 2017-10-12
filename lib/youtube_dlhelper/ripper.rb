@@ -62,7 +62,7 @@ class Ripper
     filename_in = "#{filename}.#{ext}"
     audio = FFMPEG::Movie.new(filename_in)
     puts 'Checking if the movie is valid.'.color(:aquamarine) if audio.valid?
-    ext = convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
+    ext = convert(ogg_file_accept, ffmpeg_binary, filename_in, filename, audio)
     [filename, ext]
   end
 
@@ -75,13 +75,15 @@ class Ripper
   # @param [String] filenamein The original file
   # @param [String] filename The transcoded file
   # @return [String] ext
-  def self.convert(ogg_file_accept, ffmpeg_binary, filename_in, filename)
+  def self.convert(ogg_file_accept, ffmpeg_binary, filename_in, filename, audio)
     # Transcoding the file to MP3
     if ogg_file_accept == 'true'
-      system("#{ffmpeg_binary} -i #{filename_in} -acodec vorbis -vn -ac 2 -aq 60 -strict -2 #{filename}.ogg")
+      audio.transcode("#{filename}.ogg", %w(-acodec vorbis -vn -ac 2 -aq 60 -strict -2))
+      #system("#{ffmpeg_binary} -i #{filename_in} -acodec vorbis -vn -ac 2 -aq 60 -strict -2 #{filename}.ogg")
       ext = 'ogg'
     else
-      system("#{ffmpeg_binary} -i #{filename_in} -acodec libmp3lame -ac 2 -ab 192k #{filename}.mp3")
+      audio.transcode("#{filename}.mp3", %w(-acodec libmp3lame -ac 2 -ab 192k))
+      #system("#{ffmpeg_binary} -i #{filename_in} -acodec libmp3lame -ac 2 -ab 192k #{filename}.mp3")
       ext = 'mp3'
     end
     return ext
